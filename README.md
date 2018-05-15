@@ -6,7 +6,7 @@ JDK1.7、Maven、Mysql、Eclipse、SpringBoot1.5.10、zookeeper3.4.6、kafka_2.1
 
 #### 项目介绍
 
-SpringBoot开发案例从0到1构建分布式秒杀系统
+SpringBoot开发案例从0到1构建分布式秒杀系统，项目案例基本成型，逐步完善中。
 
 
 ![输入图片说明](https://gitee.com/uploads/images/2018/0515/184423_fe86c5a6_87650.jpeg "3125351756.jpg")
