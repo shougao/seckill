@@ -56,7 +56,7 @@ public class SeckillDistributedServiceImpl implements ISeckillDistributedService
 	@Transactional
 	public Result startSeckilZksLock(long seckillId, long userId) {
 		try {
-			ZkLockUtil.acquire();
+			ZkLockUtil.acquire(seckillId+"");
 			String nativeSql = "SELECT number FROM seckill WHERE seckill_id=?";
 			Object object =  dynamicQuery.nativeQueryObject(nativeSql, new Object[]{seckillId});
 			Long number =  ((Number) object).longValue();
@@ -75,7 +75,7 @@ public class SeckillDistributedServiceImpl implements ISeckillDistributedService
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally{
-			ZkLockUtil.release();
+			ZkLockUtil.release(seckillId+"");
 		}
 		return Result.ok(SeckillStatEnum.SUCCESS);
 	}

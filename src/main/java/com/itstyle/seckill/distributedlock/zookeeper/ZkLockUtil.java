@@ -23,35 +23,21 @@ public class ZkLockUtil{
         client = CuratorFrameworkFactory.newClient(address, retryPolicy); 
         client.start();
 	}
-	/**
-     * 私有的默认构造子，保证外界无法直接实例化
-     */
-    private ZkLockUtil(){};
-    /**
-     * 类级的内部类，也就是静态的成员式内部类，该内部类的实例与外部类的实例
-     * 没有绑定关系，而且只有被调用到才会装载，从而实现了延迟加载
-     */
-    private static class SingletonHolder{
-        /**
-         * 静态初始化器，由JVM来保证线程安全
-         */
-    	private  static InterProcessMutex mutex = new InterProcessMutex(client, "/curator/lock"); 
-    }
-    public static InterProcessMutex getMutex(){
-        return SingletonHolder.mutex;
-    }
+	
     //获得了锁
-    public static void acquire(){
+    public static void acquire(String lockKey){
     	try {
-			getMutex().acquire();
+    		InterProcessMutex mutex = new InterProcessMutex(client, "/curator/lock/"+lockKey); 
+    		mutex.acquire();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
     }
     //释放锁
-    public static void release(){
+    public static void release(String lockKey){
     	try {
-			getMutex().release();
+    		InterProcessMutex mutex = new InterProcessMutex(client, "/curator/lock/"+lockKey); 
+    		mutex.release();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
