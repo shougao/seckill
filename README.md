@@ -75,7 +75,7 @@ SpringBoot开发案例从0到1构建分布式秒杀系统
 
 可能秒杀架构原理大家都懂，网上也有不少实现方式，但大多都是文字的描述，告诉你如何如何，什么加锁、缓存、队列之类。但很少全面有的案例告诉你如何去做，既然是从0到1，希望以下代码案例可以帮助到你。当然最终落实到生产，还有很长的路要走，要根据自己的业务进行编码，实施并部署。
 
-你讲会在代码案例中学到以下知识：
+你将会在代码案例中学到以下知识：
 - 如何大家SpringBoot微服务
 - ThreadPoolExecutor线程池的使用
 - ReentrantLock和Synchronized的使用场景
@@ -186,6 +186,7 @@ SpringBoot开发案例从0到1构建分布式秒杀系统
 ## 可供参考
 
 [SpringBoot开发案例从0到1构建分布式秒杀系统](https://blog.52itstyle.com/archives/2853/ "SpringBoot开发案例之整合Kafka实现消息队列")
+
 [SpringBoot开发案例之整合Kafka实现消息队列](https://blog.52itstyle.com/archives/2868/ "SpringBoot开发案例之整合Kafka实现消息队列")
 
 
