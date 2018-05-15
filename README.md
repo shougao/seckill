@@ -3,35 +3,179 @@
 #### 项目介绍
 从0到1构建分布式秒杀系统
 
-#### 软件架构
-软件架构说明
+
+![输入图片说明](https://gitee.com/uploads/images/2018/0515/184423_fe86c5a6_87650.jpeg "3125351756.jpg")
+## 前言
+
+最近，被推送了不少秒杀架构的文章，忙里偷闲自己也总结了一下各个互联网平台做秒杀活动的思路，当然也借鉴了不少同学的思路，最终使用SpringBoot模拟实现了部分秒杀场景，同时跟大家分享交流一下。
+
+## 秒杀场景
+
+秒杀场景无非就是多个用户在同时抢购一件或者多件商品，专用词汇就是所谓的高并发。现实中经常被大家喜闻乐见的场景，一群大妈抢购打折鸡蛋的画面一定不会陌生，如此场面让服务员大姐很无奈，赶上不要钱了。
+
+![输入图片说明](https://gitee.com/uploads/images/2018/0515/184529_44d682e6_87650.png "dama.png")
+
+## 业务特点
+
+- 瞬间高并发、电脑旁边的小哥哥、小姐姐们如超市哄抢的大妈一般，疯狂的点着鼠标
+- 库存少、便宜、稀缺限量，值得大家去抢购，如肾苹果，小米粉
 
 
-#### 安装教程
+## 用户规模
 
-1. xxxx
-2. xxxx
-3. xxxx
+用户规模可大可小，几百或者上千人的活动单体架构足以可以应付，简单的加锁、进程内队列就可以轻松搞定。一旦上升到百万、千万级别的规模就要考虑分布式集群来应对瞬时高并发。
 
-#### 使用说明
+## 秒杀架构
 
-1. xxxx
-2. xxxx
-3. xxxx
+![输入图片说明](https://gitee.com/uploads/images/2018/0515/184617_c7e13059_87650.png "秒杀架构.png")
 
-#### 参与贡献
+#### 架构层级
 
-1. Fork 本项目
-2. 新建 Feat_xxx 分支
-3. 提交代码
-4. 新建 Pull Request
+- 一般商家在做活动的时候，经常会遇到各种不怀好意的DDOS攻击(利用无辜的吃瓜群众夺取资源)，导致真正的我们无法获得服务！所以说高防IP还是很有必要的。
 
+- 搞活动就意味着人多，接入SLB，对多台云服务器进行流量分发，可以通过流量分发扩展应用系统对外的服务能力，通过消除单点故障提升应用系统的可用性。
 
-#### 码云特技
+- 基于SLB价格以及灵活性考虑后面我们接入Nginx做限流分发，来保障后端服务的正常运行。
 
-1. 使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2. 码云官方博客 [blog.gitee.com](https://blog.gitee.com)
-3. 你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解码云上的优秀开源项目
-4. [GVP](https://gitee.com/gvp) 全称是码云最有价值开源项目，是码云综合评定出的优秀开源项目
-5. 码云官方提供的使用手册 [http://git.mydoc.io/](http://git.mydoc.io/)
-6. 码云封面人物是一档用来展示码云会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+- 后端秒杀业务逻辑，基于Redis 或者 Zookeeper 分布式锁，Kafka 或者 Redis 做消息队列，DRDS数据库中间件实现数据的读写分离。
+
+#### 优化思路
+
+- 分流、分流、分流，重要的事情说三遍，再牛逼的机器也抵挡不住高级别的并发。
+
+- 限流、限流、限流，毕竟秒杀商品有限，防刷的前提下没有绝对的公平，根据每个服务的负载能力，设定流量极限。
+
+- 缓存、缓存、缓存、尽量不要让大量请求穿透到DB层，活动开始前商品信息可以推送至分布式缓存。
+
+- 异步、异步、异步，分析并识别出可以异步处理的逻辑，比如日志，缩短系统响应时间。
+
+- 主备、主备、主备，如果有条件做好主备容灾方案也是非常有必要的(参考某年锤子的活动被攻击)。
+
+- 最后，为了支撑更高的并发，追求更好的性能，可以对服务器的部署模型进行优化，部分请求走正常的秒杀流程，部分请求直接返回秒杀失败，缺点是开发部署时需要维护两套逻辑。
+
+#### 分层优化
+
+- 前端优化：活动开始前生成静态商品页面推送缓存和CDN，静态文件(JS/CSS)请求推送至文件服务器和CDN。
+- 网络优化：如果是全国用户，最好是BGP多线机房，减少网络延迟。
+- 应用服务优化：Nginx最佳配置、Tomcat连接池优化、数据库配置优化、数据库连接池优化。
+
+## 全链路压测
+
+- 分析需压测业务场景涉及系统
+- 协调各个压测系统资源并搭建压测环境
+- 压测数据隔离以及监控(响应时间、吞吐量、错误率等数据以图表形式实时显示)
+- 压测结果统计(平均响应时间、平均吞吐量等数据以图表形式在测试结束后显示)
+- 优化单个系统性能、关联流程以及整个业务流程
+
+整个压测优化过程就是一个不断优化不断改进的过程，事先通过测试不断发现问题，优化系统，避免问题，指定应急方案，才能让系统的稳定性和性能都得到质的提升。
+
+## 代码案例
+
+可能秒杀架构原理大家都懂，网上也有不少实现方式，但大多都是文字的描述，告诉你如何如何，什么加锁、缓存、队列之类。但很少全面有的案例告诉你如何去做，既然是从0到1，希望以下代码案例可以帮助到你。当然最终落实到生产，还有很长的路要走，要根据自己的业务进行编码，实施并部署。
+
+你讲会在代码案例中学到以下知识：
+- 如何大家SpringBoot微服务
+- ThreadPoolExecutor线程池的使用
+- ReentrantLock和Synchronized的使用场景
+- 数据库锁机制(悲观锁、乐观锁)
+- 分布式锁(RedissLock、Zookeeper)
+- 进程内消息队列(LinkedBlockingQueue、ArrayBlockingQueue、ConcurrentLinkedQueue)
+- 分布式消息队列(Redis、Kafka)
+
+#### 代码结构：
+```
+├─src
+│  ├─main
+│  │  ├─java
+│  │  │  └─com
+│  │  │      └─itstyle
+│  │  │          └─seckill
+│  │  │              │  Application.java
+│  │  │              │  
+│  │  │              ├─common
+│  │  │              │  ├─api
+│  │  │              │  │      SwaggerConfig.java 
+│  │  │              │  │      
+│  │  │              │  ├─config
+│  │  │              │  │      IndexController.java  
+│  │  │              │  │      
+│  │  │              │  ├─dynamicquery   
+│  │  │              │  │      DynamicQuery.java
+│  │  │              │  │      DynamicQueryImpl.java
+│  │  │              │  │      NativeQueryResultEntity.java
+│  │  │              │  │      
+│  │  │              │  ├─entity   
+│  │  │              │  │      Result.java
+│  │  │              │  │      Seckill.java
+│  │  │              │  │      SuccessKilled.java
+│  │  │              │  │      
+│  │  │              │  ├─enums
+│  │  │              │  │      SeckillStatEnum.java
+│  │  │              │  │      
+│  │  │              │  ├─interceptor
+│  │  │              │  │      MyAdapter.java
+│  │  │              │  │      
+│  │  │              │  └─redis
+│  │  │              │          RedisConfig.java
+│  │  │              │          RedisUtil.java
+│  │  │              │          
+│  │  │              ├─distributedlock
+│  │  │              │  ├─redis
+│  │  │              │  │      RedissLockDemo.java
+│  │  │              │  │      RedissLockUtil.java
+│  │  │              │  │      RedissonAutoConfiguration.java
+│  │  │              │  │      RedissonProperties.java
+│  │  │              │  │      
+│  │  │              │  └─zookeeper
+│  │  │              │          ZkLockUtil.java
+│  │  │              │          
+│  │  │              ├─queue
+│  │  │              │  ├─jvm
+│  │  │              │  │      SeckillQueue.java
+│  │  │              │  │      TaskRunner.java
+│  │  │              │  │      
+│  │  │              │  ├─kafka
+│  │  │              │  │      KafkaConsumer.java
+│  │  │              │  │      KafkaSender.java
+│  │  │              │  │      
+│  │  │              │  └─redis
+│  │  │              │          RedisConsumer.java
+│  │  │              │          RedisSender.java
+│  │  │              │          RedisSubListenerConfig.java
+│  │  │              │          
+│  │  │              ├─repository
+│  │  │              │      SeckillRepository.java
+│  │  │              │      
+│  │  │              ├─service
+│  │  │              │  │  ISeckillDistributedService.java
+│  │  │              │  │  ISeckillService.java
+│  │  │              │  │  
+│  │  │              │  └─impl
+│  │  │              │          SeckillDistributedServiceImpl.java
+│  │  │              │          SeckillServiceImpl.java
+│  │  │              │          
+│  │  │              └─web
+│  │  │                      SeckillController.java
+│  │  │                      SeckillDistributedController.java
+│  │  │                      
+│  │  ├─resources
+│  │  │  │  application.properties
+│  │  │  │  logback-spring.xml
+│  │  │  │  
+│  │  │  ├─sql
+│  │  │  │      seckill.sql
+│  │  │  │      
+│  │  │  ├─static
+│  │  │  └─templates
+│  │  └─webapp
+
+```
+
+## 思考
+
+- 如何防止单个用户重复秒杀下单？
+- 如何防止恶意调用秒杀接口？
+- 如果用户秒杀成功，一直不支付该怎么办？
+- 消息队列处理完成后，如果异步通知给用户秒杀成功？
+- 如何保障 Redis、Zookeeper 、Kafka 服务的正常运行(高可用)？
+- 高并发下秒杀业务如何做到不影响其他业务(隔离性)？
