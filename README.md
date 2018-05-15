@@ -1,5 +1,9 @@
 # 分布式秒杀系统
 
+## 开发环境
+
+JDK1.7、Maven、Mysql、Eclipse、SpringBoot1.5.10、zookeeper3.4.6、kafka_2.11、redis-2.8.4、curator-2.10.0
+
 #### 项目介绍
 
 SpringBoot开发案例从0到1构建分布式秒杀系统
@@ -177,3 +181,13 @@ SpringBoot开发案例从0到1构建分布式秒杀系统
 - 消息队列处理完成后，如果异步通知给用户秒杀成功？
 - 如何保障 Redis、Zookeeper 、Kafka 服务的正常运行(高可用)？
 - 高并发下秒杀业务如何做到不影响其他业务(隔离性)？
+
+
+## 可供参考
+
+[SpringBoot开发案例从0到1构建分布式秒杀系统](https://blog.52itstyle.com/archives/2853/ "SpringBoot开发案例之整合Kafka实现消息队列")
+[SpringBoot开发案例之整合Kafka实现消息队列](https://blog.52itstyle.com/archives/2868/ "SpringBoot开发案例之整合Kafka实现消息队列")
+
+
+## 欢迎关注
+![输入图片说明](https://gitee.com/uploads/images/2018/0515/185049_c1a870e4_87650.png "屏幕截图.png")
