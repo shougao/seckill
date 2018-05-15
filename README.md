@@ -185,9 +185,19 @@ SpringBoot开发案例从0到1构建分布式秒杀系统，项目案例基本�
 
 ## 可供参考
 
-[SpringBoot开发案例从0到1构建分布式秒杀系统](https://blog.52itstyle.com/archives/2853/ "SpringBoot开发案例之整合Kafka实现消息队列")
+[SpringBoot开发案例从0到1构建分布式秒杀系统](https://blog.52itstyle.com/archives/2853/ "SpringBoot开发案例从0到1构建分布式秒杀系统")
 
 [SpringBoot开发案例之整合Kafka实现消息队列](https://blog.52itstyle.com/archives/2868/ "SpringBoot开发案例之整合Kafka实现消息队列")
+
+[Nginx学习之负载均衡](https://blog.52itstyle.com/archives/623/ "Nginx学习之负载均衡")
+
+[Nginx学习之如何防止流量攻击](https://blog.52itstyle.com/archives/775/ "Nginx学习之如何防止流量攻击")
+
+[Nginx学习之缓存配置](https://blog.52itstyle.com/archives/826/ "Nginx学习之缓存配置")
+
+[Nginx学习之HTTP/2.0配置](https://blog.52itstyle.com/archives/1524/ "Nginx学习之HTTP/2.0配置")
+
+[企业云解析DNS](https://blog.52itstyle.com/archives/515/ "企业云解析DNS")
 
 
 ## 欢迎关注
