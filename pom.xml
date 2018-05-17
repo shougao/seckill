@@ -45,12 +45,16 @@
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 		</dependency>
-		<!-- spring-boot-starter-redis -->
 		<dependency>
 		    <groupId>org.springframework.boot</groupId>
 		    <artifactId>spring-boot-starter-redis</artifactId>
 		    <version>1.4.7.RELEASE</version>
 		</dependency>
+		<!-- spring-session -->
+		<dependency>
+             <groupId>org.springframework.session</groupId>
+             <artifactId>spring-session</artifactId>
+        </dependency>
         <!-- 构建Restful API -->  
         <dependency>  
             <groupId>io.springfox</groupId>  
