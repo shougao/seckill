@@ -56,7 +56,7 @@ public class SeckillDistributedController {
 			executor.execute(task);
 		}
 		try {
-			Thread.sleep(10000);
+			Thread.sleep(15000);
 			Long  seckillCount = seckillService.getSeckillCount(seckillId);
 			LOGGER.info("一共秒杀出{}件商品",seckillCount);
 		} catch (InterruptedException e) {

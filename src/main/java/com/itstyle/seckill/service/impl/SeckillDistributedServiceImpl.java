@@ -26,8 +26,8 @@ public class SeckillDistributedServiceImpl implements ISeckillDistributedService
 	public Result startSeckilRedisLock(long seckillId,long userId) {
 		boolean res=false;
 		try {
-			//尝试获取锁，最多等待10秒，上锁以后10秒自动解锁（实际项目中推荐这种，以防出现死锁）
-			res = RedissLockUtil.tryLock(seckillId+"", TimeUnit.SECONDS, 20, 10);
+			//尝试获取锁，最多等待3秒，上锁以后20秒自动解锁（实际项目中推荐这种，以防出现死锁）、这里根据预估秒杀人数，设定自动释放锁时间
+			res = RedissLockUtil.tryLock(seckillId+"", TimeUnit.SECONDS, 3, 20);
 			String nativeSql = "SELECT number FROM seckill WHERE seckill_id=?";
 			Object object =  dynamicQuery.nativeQueryObject(nativeSql, new Object[]{seckillId});
 			Long number =  ((Number) object).longValue();
