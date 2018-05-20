@@ -25,7 +25,7 @@ public class SeckillController {
 	private final static Logger LOGGER = LoggerFactory.getLogger(SeckillController.class);
 	
 	private static int corePoolSize = Runtime.getRuntime().availableProcessors();
-	//调整队列数 拒绝服务
+	//创建线程池  调整队列数 拒绝服务
 	private static ThreadPoolExecutor executor  = new ThreadPoolExecutor(corePoolSize, corePoolSize+1, 10l, TimeUnit.SECONDS,
 			new LinkedBlockingQueue<Runnable>(1000));
 	

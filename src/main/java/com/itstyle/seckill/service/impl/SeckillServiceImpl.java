@@ -84,6 +84,8 @@ public class SeckillServiceImpl implements ISeckillService {
 		 try {
 			lock.lock();
 			//这里、不清楚为啥、总是会被超卖101、难道锁不起作用、lock是同一个对象
+			//来自热心网友 zoain 的细心测试思考、然后自己总结了一下
+			//事物未提交之前，锁已经释放(事物提交是在整个方法执行完)，导致另一个事物读取到了这个事物未提交的数据，也就是传说中的脏读。建议锁上移
 			String nativeSql = "SELECT number FROM seckill WHERE seckill_id=?";
 			Object object =  dynamicQuery.nativeQueryObject(nativeSql, new Object[]{seckillId});
 			Long number =  ((Number) object).longValue();
