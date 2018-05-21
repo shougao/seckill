@@ -10,6 +10,8 @@ JDK1.7、Maven、Mysql、Eclipse、SpringBoot1.5.10、zookeeper3.4.6、kafka_2.1
 
 JAVA爱好者:<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=eba7a5d6f672c67cf942e08486e5102f0a0a6268206f873fef48a9d74f248de8"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="JAVA爱好者" title="JAVA爱好者"></a>
 
+![输入图片说明](https://gitee.com/uploads/images/2018/0521/133716_a64f4b6d_87650.jpeg "1801066129.jpg")
+
 #### 项目介绍
 
 SpringBoot开发案例从0到1构建分布式秒杀系统，项目案例基本成型，逐步完善中。
