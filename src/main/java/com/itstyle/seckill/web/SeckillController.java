@@ -85,7 +85,7 @@ public class SeckillController {
 		return Result.ok();
 	}
 	@ApiOperation(value="秒杀三(AOP程序锁)",nickname="科帮网")
-	@PostMapping("/startLock")
+	@PostMapping("/startAopLock")
 	public Result startAopLock(long seckillId){
 		seckillService.deleteSeckill(seckillId);
 		final long killId =  seckillId;
