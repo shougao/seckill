@@ -206,11 +206,13 @@ SpringBoot开发案例从0到1构建分布式秒杀系统，项目案例基本�
 
 ## 可供参考
 
-[Linux下搭建ZooKeeper集群](https://blog.52itstyle.com/archives/363/ "Linux下搭建ZooKeeper集群")
+
 
 [SpringBoot开发案例从0到1构建分布式秒杀系统](https://blog.52itstyle.com/archives/2853/ "SpringBoot开发案例从0到1构建分布式秒杀系统")
 
 [SpringBoot开发案例之整合Kafka实现消息队列](https://blog.52itstyle.com/archives/2868/ "SpringBoot开发案例之整合Kafka实现消息队列")
+
+[从构建分布式秒杀系统聊聊线程池](https://blog.52itstyle.com/archives/2894/ "从构建分布式秒杀系统聊聊线程池")
 
 [Nginx学习之负载均衡](https://blog.52itstyle.com/archives/623/ "Nginx学习之负载均衡")
 
@@ -222,6 +224,7 @@ SpringBoot开发案例从0到1构建分布式秒杀系统，项目案例基本�
 
 [企业云解析DNS](https://blog.52itstyle.com/archives/515/ "企业云解析DNS")
 
+[Linux下搭建ZooKeeper集群](https://blog.52itstyle.com/archives/363/ "Linux下搭建ZooKeeper集群")
 
 ## 欢迎关注
 ![输入图片说明](https://gitee.com/uploads/images/2018/0515/185049_c1a870e4_87650.png "屏幕截图.png")
