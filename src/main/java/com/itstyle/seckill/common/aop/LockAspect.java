@@ -31,10 +31,16 @@ public class LockAspect {
 	}
 	
     @Around("lockAspect()")
-    public  Object doAfterThrowing(ProceedingJoinPoint joinPoint) throws Throwable { 
+    public  Object around(ProceedingJoinPoint joinPoint) { 
     	lock.lock();
-    	Object obj= joinPoint.proceed();
-    	lock.unlock();
+    	Object obj = null;
+		try {
+			obj = joinPoint.proceed();
+		} catch (Throwable e) {
+			e.printStackTrace();
+		} finally{
+			lock.unlock();
+		}
     	return obj;
     } 
 }
