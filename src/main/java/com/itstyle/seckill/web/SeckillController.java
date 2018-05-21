@@ -95,7 +95,7 @@ public class SeckillController {
 			Runnable task = new Runnable() {
 				@Override
 				public void run() {
-					Result result = seckillService.startSeckilLock(killId, userId);
+					Result result = seckillService.startSeckilAopLock(killId, userId);
 					LOGGER.info("用户:{}{}",userId,result.get("msg"));
 				}
 			};
