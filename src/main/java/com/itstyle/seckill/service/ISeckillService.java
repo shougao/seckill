@@ -47,6 +47,13 @@ public interface ISeckillService {
 	 * @return
 	 */
 	Result startSeckilLock(long seckillId,long userId);
+	/**
+	 * 秒杀 二、程序锁AOP
+	 * @param seckillId
+	 * @param userId
+	 * @return
+	 */
+	Result startSeckilAopLock(long seckillId,long userId);
 	
 	/**
 	 * 秒杀 二、数据库悲观锁

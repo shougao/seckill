@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.itstyle.seckill.common.aop.Servicelock;
 import com.itstyle.seckill.common.dynamicquery.DynamicQuery;
 import com.itstyle.seckill.common.entity.Result;
 import com.itstyle.seckill.common.entity.Seckill;
@@ -110,6 +111,28 @@ public class SeckillServiceImpl implements ISeckillService {
 		return Result.ok(SeckillStatEnum.SUCCESS);
 	}
 	@Override
+	@Servicelock
+	@Transactional
+	public Result startSeckilAopLock(long seckillId, long userId) {
+		//来自码云码友<马丁的早晨>的建议 使用AOP + 锁实现
+		String nativeSql = "SELECT number FROM seckill WHERE seckill_id=?";
+		Object object =  dynamicQuery.nativeQueryObject(nativeSql, new Object[]{seckillId});
+		Long number =  ((Number) object).longValue();
+		if(number>0){
+			nativeSql = "UPDATE seckill  SET number=number-1 WHERE seckill_id=?";
+			dynamicQuery.nativeExecuteUpdate(nativeSql, new Object[]{seckillId});
+			SuccessKilled killed = new SuccessKilled();
+			killed.setSeckillId(seckillId);
+			killed.setUserId(userId);
+			killed.setState(Short.parseShort(number+""));
+			killed.setCreateTime(new Timestamp(new Date().getTime()));
+			dynamicQuery.save(killed);
+		}else{
+			return Result.error(SeckillStatEnum.END);
+		}
+		return Result.ok(SeckillStatEnum.SUCCESS);
+	}
+	@Override
 	@Transactional
 	public Result startSeckilDBPCC_ONE(long seckillId, long userId) {
 		//单用户抢购一件商品或者多件都没有问题
@@ -173,4 +196,5 @@ public class SeckillServiceImpl implements ISeckillService {
 			return Result.error(SeckillStatEnum.END);
 		}
 	}
+
 }

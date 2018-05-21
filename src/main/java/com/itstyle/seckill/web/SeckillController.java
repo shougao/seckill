@@ -84,12 +84,38 @@ public class SeckillController {
 		}
 		return Result.ok();
 	}
-	@ApiOperation(value="秒杀三(数据库悲观锁)",nickname="科帮网")
+	@ApiOperation(value="秒杀三(AOP程序锁)",nickname="科帮网")
+	@PostMapping("/startLock")
+	public Result startAopLock(long seckillId){
+		seckillService.deleteSeckill(seckillId);
+		final long killId =  seckillId;
+		LOGGER.info("开始秒杀三(正常)");
+		for(int i=0;i<1000;i++){
+			final long userId = i;
+			Runnable task = new Runnable() {
+				@Override
+				public void run() {
+					Result result = seckillService.startSeckilLock(killId, userId);
+					LOGGER.info("用户:{}{}",userId,result.get("msg"));
+				}
+			};
+			executor.execute(task);
+		}
+		try {
+			Thread.sleep(10000);
+			Long  seckillCount = seckillService.getSeckillCount(seckillId);
+			LOGGER.info("一共秒杀出{}件商品",seckillCount);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		return Result.ok();
+	}
+	@ApiOperation(value="秒杀四(数据库悲观锁)",nickname="科帮网")
 	@PostMapping("/startDBPCC_ONE")
 	public Result startDBPCC_ONE(long seckillId){
 		seckillService.deleteSeckill(seckillId);
 		final long killId =  seckillId;
-		LOGGER.info("开始秒杀三(正常)");
+		LOGGER.info("开始秒杀四(正常)");
 		for(int i=0;i<1000;i++){
 			final long userId = i;
 			Runnable task = new Runnable() {
@@ -110,12 +136,12 @@ public class SeckillController {
 		}
 		return Result.ok();
 	}
-	@ApiOperation(value="秒杀四(数据库悲观锁)",nickname="科帮网")
+	@ApiOperation(value="秒杀五(数据库悲观锁)",nickname="科帮网")
 	@PostMapping("/startDPCC_TWO")
 	public Result startDPCC_TWO(long seckillId){
 		seckillService.deleteSeckill(seckillId);
 		final long killId =  seckillId;
-		LOGGER.info("开始秒杀四(正常、数据库锁最优实现)");
+		LOGGER.info("开始秒杀五(正常、数据库锁最优实现)");
 		for(int i=0;i<1000;i++){
 			final long userId = i;
 			Runnable task = new Runnable() {
@@ -136,12 +162,12 @@ public class SeckillController {
 		}
 		return Result.ok();
 	}
-	@ApiOperation(value="秒杀五(数据库乐观锁)",nickname="科帮网")
+	@ApiOperation(value="秒杀六(数据库乐观锁)",nickname="科帮网")
 	@PostMapping("/startDBOCC")
 	public Result startDBOCC(long seckillId){
 		seckillService.deleteSeckill(seckillId);
 		final long killId =  seckillId;
-		LOGGER.info("开始秒杀五(正常、数据库锁最优实现)");
+		LOGGER.info("开始秒杀六(正常、数据库锁最优实现)");
 		for(int i=0;i<1000;i++){
 			final long userId = i;
 			Runnable task = new Runnable() {
@@ -162,12 +188,12 @@ public class SeckillController {
 		}
 		return Result.ok();
 	}
-	@ApiOperation(value="秒杀六(进程内队列)",nickname="科帮网")
+	@ApiOperation(value="秒杀柒(进程内队列)",nickname="科帮网")
 	@PostMapping("/startQueue")
 	public Result startQueue(long seckillId){
 		seckillService.deleteSeckill(seckillId);
 		final long killId =  seckillId;
-		LOGGER.info("开始秒杀六(正常)");
+		LOGGER.info("开始秒杀柒(正常)");
 		for(int i=0;i<1000;i++){
 			final long userId = i;
 			Runnable task = new Runnable() {
