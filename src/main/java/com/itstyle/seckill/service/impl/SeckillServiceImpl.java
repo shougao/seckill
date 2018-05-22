@@ -18,7 +18,7 @@ import com.itstyle.seckill.common.entity.SuccessKilled;
 import com.itstyle.seckill.common.enums.SeckillStatEnum;
 import com.itstyle.seckill.repository.SeckillRepository;
 import com.itstyle.seckill.service.ISeckillService;
-@Service
+@Service("seckillService")
 public class SeckillServiceImpl implements ISeckillService {
     /**
      * 思考：为什么不用synchronized
