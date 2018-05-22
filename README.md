@@ -92,6 +92,7 @@ SpringBoot开发案例从0到1构建分布式秒杀系统，项目案例基本�
 - 进程内消息队列(LinkedBlockingQueue、ArrayBlockingQueue、ConcurrentLinkedQueue)
 - 分布式消息队列(Redis、Kafka)
 - AOP实现切面锁
+- Disruptor高效队列
 
 #### 代码结构：
 ```
