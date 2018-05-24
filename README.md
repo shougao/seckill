@@ -216,7 +216,9 @@ SpringBoot开发案例从0到1构建分布式秒杀系统，项目案例基本�
 
 [SpringBoot开发案例之整合Kafka实现消息队列](https://blog.52itstyle.com/archives/2868/ "SpringBoot开发案例之整合Kafka实现消息队列")
 
-[从构建分布式秒杀系统聊聊线程池](https://blog.52itstyle.com/archives/2894/ "从构建分布式秒杀系统聊聊线程池")
+[从构建分布式秒杀系统聊聊Threadpool线程池](https://blog.52itstyle.com/archives/2894/ "从构建分布式秒杀系统聊聊Threadpool线程池")
+
+[从构建分布式秒杀系统聊聊Disruptor高性能队列](https://blog.52itstyle.com/archives/2911/ "从构建分布式秒杀系统聊聊Disruptor高性能队列")
 
 [Nginx学习之负载均衡](https://blog.52itstyle.com/archives/623/ "Nginx学习之负载均衡")
 
