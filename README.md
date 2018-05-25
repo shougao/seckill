@@ -96,6 +96,7 @@ SpringBoot开发案例从0到1构建分布式秒杀系统，项目案例基本�
 
 #### 代码结构：
 ```
+      
 ├─src
 │  ├─main
 │  │  ├─java
@@ -105,18 +106,23 @@ SpringBoot开发案例从0到1构建分布式秒杀系统，项目案例基本�
 │  │  │              │  Application.java
 │  │  │              │  
 │  │  │              ├─common
+│  │  │              │  ├─aop
+│  │  │              │  │      LockAspect.java
+│  │  │              │  │      Servicelock.java
+│  │  │              │  │      
 │  │  │              │  ├─api
-│  │  │              │  │      SwaggerConfig.java 
+│  │  │              │  │      SwaggerConfig.java
 │  │  │              │  │      
 │  │  │              │  ├─config
-│  │  │              │  │      IndexController.java  
+│  │  │              │  │      IndexController.java
+│  │  │              │  │      SpringUtil.java
 │  │  │              │  │      
-│  │  │              │  ├─dynamicquery   
+│  │  │              │  ├─dynamicquery
 │  │  │              │  │      DynamicQuery.java
 │  │  │              │  │      DynamicQueryImpl.java
 │  │  │              │  │      NativeQueryResultEntity.java
 │  │  │              │  │      
-│  │  │              │  ├─entity   
+│  │  │              │  ├─entity
 │  │  │              │  │      Result.java
 │  │  │              │  │      Seckill.java
 │  │  │              │  │      SuccessKilled.java
@@ -126,6 +132,9 @@ SpringBoot开发案例从0到1构建分布式秒杀系统，项目案例基本�
 │  │  │              │  │      
 │  │  │              │  ├─interceptor
 │  │  │              │  │      MyAdapter.java
+│  │  │              │  │      
+│  │  │              │  ├─lock
+│  │  │              │  │      LockDemo.java
 │  │  │              │  │      
 │  │  │              │  └─redis
 │  │  │              │          RedisConfig.java
@@ -142,6 +151,14 @@ SpringBoot开发案例从0到1构建分布式秒杀系统，项目案例基本�
 │  │  │              │          ZkLockUtil.java
 │  │  │              │          
 │  │  │              ├─queue
+│  │  │              │  ├─disruptor
+│  │  │              │  │      DisruptorUtil.java
+│  │  │              │  │      SeckillEvent.java
+│  │  │              │  │      SeckillEventConsumer.java
+│  │  │              │  │      SeckillEventFactory.java
+│  │  │              │  │      SeckillEventMain.java
+│  │  │              │  │      SeckillEventProducer.java
+│  │  │              │  │      
 │  │  │              │  ├─jvm
 │  │  │              │  │      SeckillQueue.java
 │  │  │              │  │      TaskRunner.java
@@ -159,14 +176,17 @@ SpringBoot开发案例从0到1构建分布式秒杀系统，项目案例基本�
 │  │  │              │      SeckillRepository.java
 │  │  │              │      
 │  │  │              ├─service
+│  │  │              │  │  ICreateHtmlService.java
 │  │  │              │  │  ISeckillDistributedService.java
 │  │  │              │  │  ISeckillService.java
 │  │  │              │  │  
 │  │  │              │  └─impl
+│  │  │              │          CreateHtmlServiceImpl.java
 │  │  │              │          SeckillDistributedServiceImpl.java
 │  │  │              │          SeckillServiceImpl.java
 │  │  │              │          
 │  │  │              └─web
+│  │  │                      CreateHtmlController.java
 │  │  │                      SeckillController.java
 │  │  │                      SeckillDistributedController.java
 │  │  │                      
@@ -178,8 +198,38 @@ SpringBoot开发案例从0到1构建分布式秒杀系统，项目案例基本�
 │  │  │  │      seckill.sql
 │  │  │  │      
 │  │  │  ├─static
+│  │  │  │  ├─goods
+│  │  │  │  │  ├─images
+│  │  │  │  │  │  │      
+│  │  │  │  │  │  └─shopdetail
+│  │  │  │  │  │          
+│  │  │  │  │  ├─js
+│  │  │  │  │  │      common.js
+│  │  │  │  │  │      jquery-1.9.1.min.js
+│  │  │  │  │  │      
+│  │  │  │  │  └─style
+│  │  │  │  │          shopdetail.css
+│  │  │  │  │          
+│  │  │  │  ├─iview
+│  │  │  │  │  │  iview.css
+│  │  │  │  │  │  iview.min.js
+│  │  │  │  │  │  
+│  │  │  │  │  └─fonts
+│  │  │  │  │          ionicons.eot
+│  │  │  │  │          ionicons.svg
+│  │  │  │  │          ionicons.ttf
+│  │  │  │  │          ionicons.woff
+│  │  │  │  │          
+│  │  │  │  └─template
+│  │  │  │          goods.flt
+│  │  │  │          
 │  │  │  └─templates
-│  │  └─webapp
+│  │  │          1000.html
+│  │  │          1001.html
+│  │  │          1002.html
+│  │  │          1003.html
+│  │  │          index.html
+│  │  │          
 
 ```
 
