@@ -11,5 +11,4 @@ public class SeckillEventFactory implements EventFactory<SeckillEvent> {
 	public SeckillEvent newInstance() {
 		return new SeckillEvent();
 	}
-
 }

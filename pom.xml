@@ -50,6 +50,11 @@
 		    <artifactId>spring-boot-starter-redis</artifactId>
 		    <version>1.4.7.RELEASE</version>
 		</dependency>
+		<!-- freemarker 模版 生成静态页 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-freemarker</artifactId>
+		</dependency>
 		<!-- spring-session -->
 		<dependency>
              <groupId>org.springframework.session</groupId>

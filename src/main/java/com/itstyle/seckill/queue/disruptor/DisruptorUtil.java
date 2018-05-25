@@ -2,12 +2,14 @@ package com.itstyle.seckill.queue.disruptor;
 
 import java.util.concurrent.ThreadFactory;
 
-import org.springframework.stereotype.Component;
-
 import com.lmax.disruptor.RingBuffer;
 import com.lmax.disruptor.dsl.Disruptor;
-
-@Component
+/**
+ * 来自<tukangzheng>的建议，具体性能待测试
+ * 创建者 张志朋
+ * 创建时间	2018年5月23日
+ *
+ */
 public class DisruptorUtil {
 	
 	static Disruptor<SeckillEvent> disruptor = null;

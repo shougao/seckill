@@ -5,7 +5,7 @@ import com.itstyle.seckill.service.ISeckillService;
 import com.lmax.disruptor.EventHandler;
 
 /**
- * 秒杀消费者
+ * 消费者(秒杀处理器)
  * 创建者 科帮网
  */
 public class SeckillEventConsumer implements EventHandler<SeckillEvent> {

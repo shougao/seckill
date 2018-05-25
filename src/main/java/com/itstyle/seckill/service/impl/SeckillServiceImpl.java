@@ -177,7 +177,8 @@ public class SeckillServiceImpl implements ISeckillService {
 	@Transactional
 	public Result startSeckilDBOCC(long seckillId, long userId, long number) {
 		Seckill kill = seckillRepository.findOne(seckillId);
-		if(kill.getNumber()>0){
+		//if(kill.getNumber()>0){
+		if(kill.getNumber()>=number){//剩余的数量应该要大于等于秒杀的数量
 			//乐观锁
 			String nativeSql = "UPDATE seckill  SET number=number-?,version=version+1 WHERE seckill_id=? AND version = ?";
 			int count = dynamicQuery.nativeExecuteUpdate(nativeSql, new Object[]{number,seckillId,kill.getVersion()});

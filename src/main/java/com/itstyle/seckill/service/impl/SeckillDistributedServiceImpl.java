@@ -81,6 +81,7 @@ public class SeckillDistributedServiceImpl implements ISeckillDistributedService
 	}
 
 	@Override
+	@Transactional
 	public Result startSeckilLock(long seckillId, long userId, long number) {
 		boolean res=false;
 		try {
