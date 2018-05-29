@@ -68,6 +68,8 @@
             <level>INFO</level>
         </filter>
     </appender>
+    <!-- 屏蔽kafka的警告 -->
+    <logger name="org.apache.kafka" level="ERROR"/>
     <!-- additivity 避免执行2次 -->
     <logger name="com.itstyle"  level="INFO"  additivity="false">
         <appender-ref ref="STDOUT"/>
