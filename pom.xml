@@ -100,7 +100,7 @@
 		    <artifactId>disruptor</artifactId>
 		    <version>3.4.1</version>
 		</dependency>
-		<!-- webSocket 秒杀通知 -->
+		<!-- webSocket 秒杀通知-->
 		<dependency>
 		    <groupId>org.springframework.boot</groupId>
 		    <artifactId>spring-boot-starter-websocket</artifactId>
