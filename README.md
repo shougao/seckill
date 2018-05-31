@@ -261,7 +261,7 @@ SpringBoot开发案例从0到1构建分布式秒杀系统，项目案例基本�
 
 ## 可供参考
 
-
+[淘宝大秒系统设计详解](https://blog.csdn.net/heyc861221/article/details/80122167 "淘宝大秒系统设计详解")
 
 [SpringBoot开发案例从0到1构建分布式秒杀系统](https://blog.52itstyle.com/archives/2853/ "SpringBoot开发案例从0到1构建分布式秒杀系统")
 
