@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.itstyle.seckill.common.entity.Result;
+import com.itstyle.seckill.common.redis.RedisUtil;
 import com.itstyle.seckill.queue.kafka.KafkaSender;
 import com.itstyle.seckill.queue.redis.RedisSender;
 import com.itstyle.seckill.service.ISeckillDistributedService;
@@ -37,6 +38,7 @@ public class SeckillDistributedController {
 	private RedisSender redisSender;
 	@Autowired
 	private KafkaSender kafkaSender;
+	private static RedisUtil redisUtil = new RedisUtil();
 	
 	@ApiOperation(value="秒杀一(Rediss分布式锁)",nickname="科帮网")
 	@PostMapping("/startRedisLock")
@@ -101,8 +103,12 @@ public class SeckillDistributedController {
 			Runnable task = new Runnable() {
 				@Override
 				public void run() {
-					//思考如何返回给用户信息ws
-					redisSender.sendChannelMess("seckill",killId+";"+userId);
+					if(redisUtil.getValue(killId+"")!=null){
+						//思考如何返回给用户信息ws
+						redisSender.sendChannelMess("seckill",killId+";"+userId);
+					}else{
+						//秒杀结束
+					}
 				}
 			};
 			executor.execute(task);
@@ -127,8 +133,12 @@ public class SeckillDistributedController {
 			Runnable task = new Runnable() {
 				@Override
 				public void run() {
-					//思考如何返回给用户信息ws
-					kafkaSender.sendChannelMess("seckill",killId+";"+userId);
+					if(redisUtil.getValue(killId+"")!=null){
+						//思考如何返回给用户信息ws
+						kafkaSender.sendChannelMess("seckill",killId+";"+userId);
+					}else{
+						//秒杀结束
+					}
 				}
 			};
 			executor.execute(task);
