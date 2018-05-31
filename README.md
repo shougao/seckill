@@ -8,7 +8,7 @@ JDK1.7、Maven、Mysql、Eclipse、SpringBoot1.5.10、zookeeper3.4.6、kafka_2.1
 
 由于工作原因，项目正在完善中（仅供参考），随时更新日志，有疑问请留言或者加群
 
-JAVA爱好者:<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=eba7a5d6f672c67cf942e08486e5102f0a0a6268206f873fef48a9d74f248de8"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="JAVA爱好者" title="JAVA爱好者"></a>
+JAVA爱好者(529135840):<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=eba7a5d6f672c67cf942e08486e5102f0a0a6268206f873fef48a9d74f248de8"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="JAVA爱好者" title="JAVA爱好者"></a>
 
 ![输入图片说明](https://gitee.com/uploads/images/2018/0521/133716_a64f4b6d_87650.jpeg "1801066129.jpg")
 
@@ -273,6 +273,8 @@ SpringBoot开发案例从0到1构建分布式秒杀系统，项目案例基本�
 
 [从构建分布式秒杀系统聊聊商品详情页静态化](https://blog.52itstyle.com/archives/2934/ "从构建分布式秒杀系统聊聊商品详情页静态化")
 
+[构建分布式秒杀系统聊聊Lock锁使用中的坑](https://blog.52itstyle.com/archives/2952/ "构建分布式秒杀系统聊聊Lock锁使用中的坑")
+
 [Nginx学习之负载均衡](https://blog.52itstyle.com/archives/623/ "Nginx学习之负载均衡")
 
 [Nginx学习之如何防止流量攻击](https://blog.52itstyle.com/archives/775/ "Nginx学习之如何防止流量攻击")
@@ -285,5 +287,17 @@ SpringBoot开发案例从0到1构建分布式秒杀系统，项目案例基本�
 
 [Linux下搭建ZooKeeper集群](https://blog.52itstyle.com/archives/363/ "Linux下搭建ZooKeeper集群")
 
-## 欢迎关注
-![输入图片说明](https://gitee.com/uploads/images/2018/0515/185049_c1a870e4_87650.png "屏幕截图.png")
+## 赠书活动
+![输入图片说明](https://gitee.com/uploads/images/2018/0531/181554_bba9a7b3_87650.png "songshu.png")
+
+#### 奖品介绍：
+
+获奖者可以挑选以下任意一本：
+
+- SQL即查即用
+- 阿里巴巴Java开发手册
+- Android项目开发实战入门
+- JavaWeb项目开发实战入门
+
+邀请猿猿和媛媛组团参与，中奖率更高；一人中奖，全团中奖。
+
