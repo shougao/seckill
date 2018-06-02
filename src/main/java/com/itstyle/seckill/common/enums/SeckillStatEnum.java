@@ -1,7 +1,8 @@
 package com.itstyle.seckill.common.enums;
 
 public enum SeckillStatEnum {
-
+    
+	MUCH(2,"哎呦喂，人也太多了，请稍后！"),
     SUCCESS(1,"秒杀成功"),
     END(0,"秒杀结束"),
     REPEAT_KILL(-1,"重复秒杀"),

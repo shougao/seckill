@@ -72,7 +72,7 @@ public class SeckillDistributedController {
 		seckillService.deleteSeckill(seckillId);
 		final long killId =  seckillId;
 		LOGGER.info("开始秒杀二");
-		for(int i=0;i<1000;i++){
+		for(int i=0;i<10000;i++){
 			final long userId = i;
 			Runnable task = new Runnable() {
 				@Override
