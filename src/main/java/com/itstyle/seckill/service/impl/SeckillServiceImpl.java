@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.itstyle.seckill.common.aop.ServiceLimit;
 import com.itstyle.seckill.common.aop.Servicelock;
 import com.itstyle.seckill.common.dynamicquery.DynamicQuery;
 import com.itstyle.seckill.common.entity.Result;
@@ -56,6 +57,7 @@ public class SeckillServiceImpl implements ISeckillService {
 		dynamicQuery.nativeExecuteUpdate(nativeSql, new Object[]{seckillId});
 	}
 	@Override
+	@ServiceLimit
 	@Transactional
 	public Result startSeckil(long seckillId,long userId) {
 		//校验库存

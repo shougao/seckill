@@ -46,7 +46,11 @@ public class SeckillController {
 				@Override
 				public void run() {
 					Result result = seckillService.startSeckil(killId, userId);
-					LOGGER.info("用户:{}{}",userId,result.get("msg"));
+					if(result!=null){
+						LOGGER.info("用户:{}{}",userId,result.get("msg"));
+					}else{
+						LOGGER.info("用户:{}{}",userId,"哎呦喂，人也太多了，请稍后！");
+					}
 				}
 			};
 			executor.execute(task);
