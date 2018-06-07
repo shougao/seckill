@@ -179,7 +179,9 @@ public class SeckillController {
 			Runnable task = new Runnable() {
 				@Override
 				public void run() {
-					Result result = seckillService.startSeckilDBOCC(killId, userId,4);
+					//这里使用的乐观锁、可以自定义抢购数量、如果配置的抢购人数比较少、比如120:100(人数:商品) 会出现少买的情况
+					//用户同时进入会出现更新失败的情况
+					Result result = seckillService.startSeckilDBOCC(killId, userId,1);
 					LOGGER.info("用户:{}{}",userId,result.get("msg"));
 				}
 			};
