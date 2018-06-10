@@ -288,16 +288,12 @@ SpringBoot开发案例从0到1构建分布式秒杀系统，项目案例基本�
 [Linux下搭建ZooKeeper集群](https://blog.52itstyle.com/archives/363/ "Linux下搭建ZooKeeper集群")
 
 ## 赠书活动
-![输入图片说明](https://gitee.com/uploads/images/2018/0531/181554_bba9a7b3_87650.png "songshu.png")
+![输入图片说明](https://gitee.com/uploads/images/2018/0610/214519_08f0fb03_87650.png "QQ图片20180610203835.png")
 
 #### 奖品介绍：
 
-获奖者可以挑选以下任意一本：
+- 《Effective java中文版》
+- 《阿里巴巴Java开发手册》
+- 《亿级流量网站架构核心技术》
 
-- SQL即查即用
-- 阿里巴巴Java开发手册
-- Android项目开发实战入门
-- JavaWeb项目开发实战入门
-
-邀请猿猿和媛媛组团参与，中奖率更高；一人中奖，全团中奖。
 
