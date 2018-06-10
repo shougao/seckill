@@ -135,6 +135,7 @@ public class SeckillServiceImpl implements ISeckillService {
 		return Result.ok(SeckillStatEnum.SUCCESS);
 	}
 	@Override
+	@ServiceLimit
 	@Transactional
 	public Result startSeckilDBPCC_ONE(long seckillId, long userId) {
 		//单用户抢购一件商品或者多件都没有问题
