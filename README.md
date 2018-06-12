@@ -275,6 +275,8 @@ SpringBoot开发案例从0到1构建分布式秒杀系统，项目案例基本�
 
 [构建分布式秒杀系统聊聊Lock锁使用中的坑](https://blog.52itstyle.com/archives/2952/ "构建分布式秒杀系统聊聊Lock锁使用中的坑")
 
+[从构建分布式秒杀系统聊聊限流特技](https://blog.52itstyle.com/archives/2982/ "从构建分布式秒杀系统聊聊限流特技")
+
 [Nginx学习之负载均衡](https://blog.52itstyle.com/archives/623/ "Nginx学习之负载均衡")
 
 [Nginx学习之如何防止流量攻击](https://blog.52itstyle.com/archives/775/ "Nginx学习之如何防止流量攻击")
