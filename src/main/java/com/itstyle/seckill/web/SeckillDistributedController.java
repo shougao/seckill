@@ -38,7 +38,8 @@ public class SeckillDistributedController {
 	private RedisSender redisSender;
 	@Autowired
 	private KafkaSender kafkaSender;
-	private static RedisUtil redisUtil = new RedisUtil();
+	@Autowired
+	private RedisUtil redisUtil;
 	
 	@ApiOperation(value="秒杀一(Rediss分布式锁)",nickname="科帮网")
 	@PostMapping("/startRedisLock")
@@ -95,6 +96,7 @@ public class SeckillDistributedController {
 	@ApiOperation(value="秒杀三(Redis分布式队列-订阅监听)",nickname="科帮网")
 	@PostMapping("/startRedisQueue")
 	public Result startRedisQueue(long seckillId){
+		redisUtil.cacheValue(seckillId+"", null);//秒杀结束
 		seckillService.deleteSeckill(seckillId);
 		final long killId =  seckillId;
 		LOGGER.info("开始秒杀三");
@@ -103,7 +105,7 @@ public class SeckillDistributedController {
 			Runnable task = new Runnable() {
 				@Override
 				public void run() {
-					if(redisUtil.getValue(killId+"")!=null){
+					if(redisUtil.getValue(killId+"")==null){
 						//思考如何返回给用户信息ws
 						redisSender.sendChannelMess("seckill",killId+";"+userId);
 					}else{
