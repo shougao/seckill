@@ -6,7 +6,7 @@ JDK1.7、Maven、Mysql、Eclipse、SpringBoot1.5.10、zookeeper3.4.6、kafka_2.1
 
 ## 启动说明
 
-运行Application中的main方法，访问http://localhost:8080/seckill/swagger-ui.html进行API测试
+运行Application中的main方法，访问 http://localhost:8080/seckill/swagger-ui.html 进行API测试
 
 ## 友情提示
 
