@@ -4,6 +4,10 @@
 
 JDK1.7、Maven、Mysql、Eclipse、SpringBoot1.5.10、zookeeper3.4.6、kafka_2.11、redis-2.8.4、curator-2.10.0
 
+## 启动说明
+
+运行Application中的main方法，访问http://localhost:8080/seckill/swagger-ui.html进行API测试
+
 ## 友情提示
 
 由于工作原因，项目正在完善中（仅供参考），随时更新日志，有疑问请留言或者加群
@@ -275,6 +279,8 @@ SpringBoot开发案例从0到1构建分布式秒杀系统，项目案例基本�
 
 [构建分布式秒杀系统聊聊Lock锁使用中的坑](https://blog.52itstyle.com/archives/2952/ "构建分布式秒杀系统聊聊Lock锁使用中的坑")
 
+[从构建分布式秒杀系统聊聊限流特技](https://blog.52itstyle.com/archives/2982/ "从构建分布式秒杀系统聊聊限流特技")
+
 [Nginx学习之负载均衡](https://blog.52itstyle.com/archives/623/ "Nginx学习之负载均衡")
 
 [Nginx学习之如何防止流量攻击](https://blog.52itstyle.com/archives/775/ "Nginx学习之如何防止流量攻击")
@@ -288,16 +294,12 @@ SpringBoot开发案例从0到1构建分布式秒杀系统，项目案例基本�
 [Linux下搭建ZooKeeper集群](https://blog.52itstyle.com/archives/363/ "Linux下搭建ZooKeeper集群")
 
 ## 赠书活动
-![输入图片说明](https://gitee.com/uploads/images/2018/0531/181554_bba9a7b3_87650.png "songshu.png")
+![输入图片说明](https://gitee.com/uploads/images/2018/0610/214519_08f0fb03_87650.png "QQ图片20180610203835.png")
 
 #### 奖品介绍：
 
-获奖者可以挑选以下任意一本：
+- 《Effective java中文版》
+- 《阿里巴巴Java开发手册》
+- 《亿级流量网站架构核心技术》
 
-- SQL即查即用
-- 阿里巴巴Java开发手册
-- Android项目开发实战入门
-- JavaWeb项目开发实战入门
-
-邀请猿猿和媛媛组团参与，中奖率更高；一人中奖，全团中奖。
 
