@@ -6,7 +6,7 @@ JDK1.7、Maven、Mysql、Eclipse、SpringBoot1.5.10、zookeeper3.4.6、kafka_2.1
 
 ## 启动说明
 
-运行Application中的main方法，访问http://localhost:8080/seckill/swagger-ui.html进行API测试
+运行Application中的main方法，访问 http://localhost:8080/seckill/swagger-ui.html 进行API测试
 
 ## 友情提示
 
@@ -292,14 +292,4 @@ SpringBoot开发案例从0到1构建分布式秒杀系统，项目案例基本�
 [企业云解析DNS](https://blog.52itstyle.com/archives/515/ "企业云解析DNS")
 
 [Linux下搭建ZooKeeper集群](https://blog.52itstyle.com/archives/363/ "Linux下搭建ZooKeeper集群")
-
-## 赠书活动
-![输入图片说明](https://gitee.com/uploads/images/2018/0610/214519_08f0fb03_87650.png "QQ图片20180610203835.png")
-
-#### 奖品介绍：
-
-- 《Effective java中文版》
-- 《阿里巴巴Java开发手册》
-- 《亿级流量网站架构核心技术》
-
 
