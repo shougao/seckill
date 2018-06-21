@@ -8,15 +8,21 @@ import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.context.annotation.Scope;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 /**
  * 同步锁 AOP
  * 创建者	张志朋
  * 创建时间	2015年6月3日
+ * @transaction 以及 order 说明
+ * https://docs.spring.io/spring/docs/4.3.14.RELEASE/spring-framework-reference/htmlsingle/#transaction-declarative-annotations
+ * https://docs.spring.io/spring/docs/4.3.14.RELEASE/javadoc-api/
  */
 @Component
 @Scope
 @Aspect
+@Order(1)
+//order越小越是最先执行，但更重要的是最先执行的最后结束。order默认值是2147483647
 public class LockAspect {
 	/**
      * 思考：为什么不用synchronized
