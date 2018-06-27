@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
  * 同步锁 AOP
  * 创建者	张志朋
  * 创建时间	2015年6月3日
- * @transaction 以及 order 说明
+ * @transaction 中  order 大小的说明
  * https://docs.spring.io/spring/docs/4.3.14.RELEASE/spring-framework-reference/htmlsingle/#transaction-declarative-annotations
  * https://docs.spring.io/spring/docs/4.3.14.RELEASE/javadoc-api/
  */
