@@ -16,6 +16,8 @@ JAVA爱好者(529135840):<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idke
 
 ![输入图片说明](https://gitee.com/uploads/images/2018/0521/133716_a64f4b6d_87650.jpeg "1801066129.jpg")
 
+联系QQ:345849402
+
 #### 项目介绍
 
 SpringBoot开发案例从0到1构建分布式秒杀系统，项目案例基本成型，逐步完善中。
