@@ -70,7 +70,7 @@ public interface ISeckillService {
 	 */
 	Result startSeckilDBPCC_TWO(long seckillId,long userId);
 	/**
-	 * 秒杀 三、数据库悲观锁
+	 * 秒杀 三、数据库乐观锁
 	 * @param seckillId
 	 * @param userId
 	 * @return

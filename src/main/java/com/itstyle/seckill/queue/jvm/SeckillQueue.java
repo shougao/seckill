@@ -11,7 +11,7 @@ import com.itstyle.seckill.common.entity.SuccessKilled;
 public class SeckillQueue {
 	 //队列大小
     static final int QUEUE_MAX_SIZE   = 100;
-
+    /** 用于多线程间下单的队列 */
     static BlockingQueue<SuccessKilled> blockingQueue = new LinkedBlockingQueue<SuccessKilled>(QUEUE_MAX_SIZE);
     
     /**
@@ -44,7 +44,11 @@ public class SeckillQueue {
     public  Boolean  produce(SuccessKilled kill) throws InterruptedException {
     	return blockingQueue.offer(kill);
     }
-    //消费出队
+    /**
+     * 消费出队
+     * poll() 获取并移除队首元素，在指定的时间内去轮询队列看有没有首元素有则返回，否者超时后返回null
+     * take() 与带超时时间的poll类似不同在于take时候如果当前队列空了它会一直等待其他线程调用notEmpty.signal()才会被唤醒
+     */
     public  SuccessKilled consume() throws InterruptedException {
         return blockingQueue.take();
     }
