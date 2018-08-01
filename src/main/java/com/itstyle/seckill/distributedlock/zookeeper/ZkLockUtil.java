@@ -35,6 +35,8 @@ public class ZkLockUtil{
     private static class SingletonHolder{
         /**
          * 静态初始化器，由JVM来保证线程安全
+         * 参考：http://ifeve.com/zookeeper-lock/
+         * 这里建议 new 一个
          */
     	private  static InterProcessMutex mutex = new InterProcessMutex(client, "/curator/lock"); 
     }

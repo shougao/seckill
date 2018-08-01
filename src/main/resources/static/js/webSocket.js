@@ -23,7 +23,7 @@ socket = {
 		};
 		webSocket.onmessage = function(event) {
 			var message = event.data;
-			alert("恭喜你秒杀成功、赶紧付款吧！！！")
+			alert(message)//判断秒杀是否成功、自行写逻辑
 		};
 	}
 }

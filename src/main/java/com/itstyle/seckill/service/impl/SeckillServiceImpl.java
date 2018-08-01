@@ -156,7 +156,10 @@ public class SeckillServiceImpl implements ISeckillService {
 			return Result.error(SeckillStatEnum.END);
 		}
 	}
-
+    /**
+     * SHOW STATUS LIKE 'innodb_row_lock%'; 
+     * 如果发现锁争用比较严重，如InnoDB_row_lock_waits和InnoDB_row_lock_time_avg的值比较高
+     */
 	@Override
 	@Transactional
 	public Result startSeckilDBPCC_TWO(long seckillId, long userId) {
@@ -175,7 +178,6 @@ public class SeckillServiceImpl implements ISeckillService {
 			return Result.error(SeckillStatEnum.END);
 		}
 	}
-
 	@Override
 	@Transactional
 	public Result startSeckilDBOCC(long seckillId, long userId, long number) {
