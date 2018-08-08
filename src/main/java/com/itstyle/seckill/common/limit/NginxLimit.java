@@ -6,7 +6,11 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.concurrent.CountDownLatch;
-
+/**
+ * Nginx 限流压测
+ * src/mian/resources/nginx
+ * src/mian/resources/openresty
+ */
 public class NginxLimit {
 	 //也可以使用AB压测 ab -n1000 -c 10 http://121.42.155.213
 	 private static int count = 0;
