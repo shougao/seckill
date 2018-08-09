@@ -6,11 +6,11 @@ JDK1.7、Maven、Mysql、Eclipse、SpringBoot1.5.10、zookeeper3.4.6、kafka_2.1
 
 ## 启动说明
 
-启动前 请配置 application.properties 中相关redis、zk以及kafka相关地址，建议在Linux下安装使用。
+- 启动前 请配置 application.properties 中相关redis、zk以及kafka相关地址，建议在Linux下安装使用。
 
-配置完成，运行Application中的main方法，访问 http://localhost:8080/seckill/swagger-ui.html 进行API测试。
+- 配置完成，运行Application中的main方法，访问 http://localhost:8080/seckill/swagger-ui.html 进行API测试。
 
-本测试案例单纯为了学习，某些案例并不适用于生产环境，大家根据所需自行调整。
+- 本测试案例单纯为了学习，某些案例并不适用于生产环境，大家根据所需自行调整。
 
 ## 友情提示
 
