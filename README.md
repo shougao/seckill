@@ -16,13 +16,6 @@ JDK1.7、Maven、Mysql、Eclipse、SpringBoot1.5.10、zookeeper3.4.6、kafka_2.1
 
 由于工作原因，项目正在完善中（仅供参考），随时更新日志，有疑问请留言或者加群
 
-## 更多精彩
-
-一个有温度的微信公众号，期待与你共同进步，分享美文，分享各种Java学习资源
-
-![输入图片说明](https://images.gitee.com/uploads/images/2018/0809/181043_76e4d5b8_87650.png "1234.png")
-
-联系QQ:345849402
 
 #### 项目介绍
 
@@ -308,4 +301,10 @@ SpringBoot开发案例从0到1构建分布式秒杀系统，项目案例基本�
 [企业云解析DNS](https://blog.52itstyle.com/archives/515/ "企业云解析DNS")
 
 [Linux下搭建ZooKeeper集群](https://blog.52itstyle.com/archives/363/ "Linux下搭建ZooKeeper集群")
+
+## 欢迎关注
+
+一个有温度的微信公众号，期待与你共同进步，分享美文，分享各种Java学习资源
+
+![输入图片说明](https://images.gitee.com/uploads/images/2018/0809/181043_76e4d5b8_87650.png "1234.png")
 
