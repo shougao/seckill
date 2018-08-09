@@ -12,9 +12,9 @@ JDK1.7、Maven、Mysql、Eclipse、SpringBoot1.5.10、zookeeper3.4.6、kafka_2.1
 
 由于工作原因，项目正在完善中（仅供参考），随时更新日志，有疑问请留言或者加群
 
-JAVA爱好者(529135840):<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=eba7a5d6f672c67cf942e08486e5102f0a0a6268206f873fef48a9d74f248de8"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="JAVA爱好者" title="JAVA爱好者"></a>
+一个有温度的微信公众号，期待与你共同进步，分享美文，分享各种Java学习资源
 
-![输入图片说明](https://gitee.com/uploads/images/2018/0521/133716_a64f4b6d_87650.jpeg "1801066129.jpg")
+![输入图片说明](https://images.gitee.com/uploads/images/2018/0809/181043_76e4d5b8_87650.png "1234.png")
 
 联系QQ:345849402
 
