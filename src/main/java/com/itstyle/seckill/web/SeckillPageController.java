@@ -22,9 +22,10 @@ public class SeckillPageController {
 	@Autowired
 	private ISeckillService seckillService;
 	
-	@ApiOperation(value = "秒杀商品列表", nickname = "科帮网")
+	@ApiOperation(value = "秒杀商品列表", nickname = "小柒2012")
 	@PostMapping("/list")
 	public Result list() {
+		//返回JSON数据、前端VUE迭代即可
 		List<Seckill>  List = seckillService.getSeckillList();
 		return Result.ok(List);
 	}
