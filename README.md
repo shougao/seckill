@@ -6,17 +6,16 @@ JDK1.7、Maven、Mysql、Eclipse、SpringBoot1.5.10、zookeeper3.4.6、kafka_2.1
 
 ## 启动说明
 
-运行Application中的main方法，访问 http://localhost:8080/seckill/swagger-ui.html 进行API测试
+- 启动前 请配置 application.properties 中相关redis、zk以及kafka相关地址，建议在Linux下安装使用。
+
+- 配置完成，运行Application中的main方法，访问 http://localhost:8080/seckill/swagger-ui.html 进行API测试。
+
+- 本测试案例单纯为了学习，某些案例并不适用于生产环境，大家根据所需自行调整。
 
 ## 友情提示
 
 由于工作原因，项目正在完善中（仅供参考），随时更新日志，有疑问请留言或者加群
 
-JAVA爱好者(529135840):<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=eba7a5d6f672c67cf942e08486e5102f0a0a6268206f873fef48a9d74f248de8"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="JAVA爱好者" title="JAVA爱好者"></a>
-
-![输入图片说明](https://gitee.com/uploads/images/2018/0521/133716_a64f4b6d_87650.jpeg "1801066129.jpg")
-
-联系QQ:345849402
 
 #### 项目介绍
 
@@ -240,6 +239,9 @@ SpringBoot开发案例从0到1构建分布式秒杀系统，项目案例基本�
 
 ```
 
+## 单机
+![输入图片说明](https://images.gitee.com/uploads/images/2018/0808/130957_95d3c19b_1484849.png "1881684788.png")
+
 ## 分布式锁应该具备哪些条件
 
 - 在分布式系统环境下，一个方法在同一时间只能被一个机器的一个线程执行； 
@@ -299,4 +301,10 @@ SpringBoot开发案例从0到1构建分布式秒杀系统，项目案例基本�
 [企业云解析DNS](https://blog.52itstyle.com/archives/515/ "企业云解析DNS")
 
 [Linux下搭建ZooKeeper集群](https://blog.52itstyle.com/archives/363/ "Linux下搭建ZooKeeper集群")
+
+## 欢迎关注
+
+一个有温度的微信公众号，期待与你共同进步，分享美文，分享各种Java学习资源
+
+![输入图片说明](https://images.gitee.com/uploads/images/2018/0809/181043_76e4d5b8_87650.png "1234.png")
 

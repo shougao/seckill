@@ -23,6 +23,20 @@ public class LockDemo {
 			new Runnable() {
 				@Override
 				public void run() {
+					lock(num);
+				}
+			}.run();
+		}
+		long end = System.currentTimeMillis();
+		System.out.println(end-start);
+	}
+	public static void SyncDemo(){
+		long start = System.currentTimeMillis();
+		for(int i=0;i<1000000;i++){
+			final int num = i;
+			new Runnable() {
+				@Override
+				public void run() {
 					sync(num);
 				}
 			}.run();
