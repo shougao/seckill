@@ -10,7 +10,15 @@ JDK1.7、Maven、Mysql、Eclipse、SpringBoot1.5.10、zookeeper3.4.6、kafka_2.1
 
 - 配置完成，运行Application中的main方法，访问 http://localhost:8080/seckill/swagger-ui.html 进行API测试。
 
+- 秒杀商品页：http://localhost:8080/seckill，部分功能待完成。
+
 - 本测试案例单纯为了学习，某些案例并不适用于生产环境，大家根据所需自行调整。
+
+## 项目截图
+
+![秒杀商品列表](https://images.gitee.com/uploads/images/2018/0812/153301_3a86c8f4_87650.png "P1V_MX5VC67{PTQOXFLMTXE.png")
+
+![商品详情页](https://images.gitee.com/uploads/images/2018/0812/153441_94ad4819_87650.png "E6KBG9_(X859`XOOFV_LJ2P.png")
 
 ## 友情提示
 
