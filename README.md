@@ -92,6 +92,19 @@ SpringBoot开发案例从0到1构建分布式秒杀系统，项目案例基本�
 
 整个压测优化过程就是一个不断优化不断改进的过程，事先通过测试不断发现问题，优化系统，避免问题，指定应急方案，才能让系统的稳定性和性能都得到质的提升。
 
+## 数据采集监控
+
+[分布式跟踪工具Pinpoint初探](https://blog.52itstyle.com/archives/2806/)
+
+[Grafana+Telegraf+Influxdb监控Tomcat集群方案](https://blog.52itstyle.com/archives/3208/)
+
+[Grafana+Prometheus系统监控之MySql](https://blog.52itstyle.com/archives/2059/)
+
+[Grafana+Prometheus系统监控之Redis](https://blog.52itstyle.com/archives/2049/)
+
+[Grafana+Prometheus系统监控之SpringBoot](https://blog.52itstyle.com/archives/2143/)
+
+
 ## 代码案例
 
 可能秒杀架构原理大家都懂，网上也有不少实现方式，但大多都是文字的描述，告诉你如何如何，什么加锁、缓存、队列之类。但很少全面有的案例告诉你如何去做，既然是从0到1，希望以下代码案例可以帮助到你。当然最终落实到生产，还有很长的路要走，要根据自己的业务进行编码，实施并部署。
