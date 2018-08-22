@@ -18,6 +18,12 @@ JDK1.7、Maven、Mysql、Eclipse、SpringBoot1.5.10、zookeeper3.4.6、kafka_2.1
 
 - 本测试案例单纯为了学习，某些案例并不适用于生产环境，大家根据所需自行调整。
 
+## 测试入口
+
+http://localhost:8080/seckill/swagger-ui.html
+
+![API](https://images.gitee.com/uploads/images/2018/0822/182938_cd8b14a3_87650.png "API.png")
+
 ## 项目截图
 
 ![秒杀商品列表](https://images.gitee.com/uploads/images/2018/0812/153301_3a86c8f4_87650.png "P1V_MX5VC67{PTQOXFLMTXE.png")
