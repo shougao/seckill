@@ -32,7 +32,7 @@ select name from user where name like '%xxx'
 select name from user where name like 'xxx%'
 ```
 
-建议使用` solr` 、` es` 等第三方开始工具实现全文检索功能。
+MyISAM 存储引擎也可以做全文检索，不过只支持英文，相信现在应该也没人使用它了。建议使用` solr` 、` es` 等第三方开始工具实现全文检索功能。
 
 #### 数据区分不明显的不建议创建索引
 
