@@ -32,7 +32,7 @@
 			$this.addClass('active').blur();
 			var panel=$this.attr("href");
 			$(panel).show();				
-			return fasle;  //告诉浏览器  不要纸箱这个链接
+			return false;  //告诉浏览器  不要指向这个链接
 			})//end click
 			$(".tabs li:first a").click()   //web 浏览器，单击第一个标签吧
 		})//end ready
