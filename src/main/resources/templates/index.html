@@ -60,7 +60,7 @@ var tableTitle = [ {
 	align : 'center',
 	render : function(h, params) {
 		var functionList = [];
-		//查看
+		//购买
 		var seeH = h('Button', {
 			props : {
 				type : 'primary',
@@ -75,7 +75,7 @@ var tableTitle = [ {
 					window.open(params.row.seckillId+".shtml");     
 				}
 			}
-		}, '查看');
+		}, '购买');
 		functionList.push(seeH);
 		// 返回方法集合
 		return h('div', functionList);

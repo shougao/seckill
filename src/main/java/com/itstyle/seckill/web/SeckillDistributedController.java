@@ -135,7 +135,7 @@ public class SeckillDistributedController {
 			Runnable task = new Runnable() {
 				@Override
 				public void run() {
-					if(redisUtil.getValue(killId+"")!=null){
+					if(redisUtil.getValue(killId+"")==null){
 						//思考如何返回给用户信息ws
 						kafkaSender.sendChannelMess("seckill",killId+";"+userId);
 					}else{
