@@ -74,7 +74,8 @@ MyISAM是没有死锁问题的，因为他会一次性获得所有的锁。InnoD
 
 #### 秒杀一
 
-```sql
+
+```
 ## 查询库存，由于是主键查询使用到了索引，所以是行级锁
 SELECT number FROM seckill WHERE seckill_id=? FOR UPDATE
 ## 如果库存大于秒杀数则更新，UPDATE 操作也是行级锁
@@ -82,13 +83,13 @@ UPDATE seckill  SET number=number-1 WHERE seckill_id=?
 ```
 
 #### 秒杀二
-```sql
+```
 //直接更新数据，如果count为1秒杀成功否则失败
 UPDATE seckill  SET number=number-1 WHERE seckill_id=? AND number>0
 ```
 
 #### 秒杀三
-```sql
+```
 //获取商品版本号以及剩余数量
 SELECT version,number  FROM seckill WHERE seckill_id=?
 //判断剩余数量是否充足并更新
