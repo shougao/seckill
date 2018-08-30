@@ -1,9 +1,95 @@
 ## HashMap的结构
 数组的寻址快，但是数据的插入与删除速度不行。 链表的插入与删除速度快，但是寻址速度不行。 那有没有一种两者兼具的数据结构，答案肯定是有的，那就是hash表。 HashMap 就是根据 数组+链表的方式组成了hash表：
 
+![输入图片说明](https://images.gitee.com/uploads/images/2018/0830/173130_ca792251_87650.png "1.png")
+
 ## 对于HashMap的一些疑问
+
+![输入图片说明](https://images.gitee.com/uploads/images/2018/0830/173144_4d97d72f_87650.png "2.png")
+
 一、HashMap的resize过程是什么样的？（rehash）
 HashMap在put的时候会先检查当前数组的length,如果插入新的值的时候使得length > 0.75f * size（f 为加载因子，可以在创建hashMap时指定）的话，会将数组进行扩容为当前容量的2倍。 扩容之后必定要将原有hashMap 中的值拷贝到新容量的hashMap 里面，HashMap 默认的容量为16，加载因子为0.75， 也就是说当HashMap 中Entry的个数超过 16 * 0.75 = 12时, 会将容量扩充为 16 * 2 = 32，然后重新计算元素在数组中的位置，这是一个非常耗时的操作，所以我们在使用HashMap的时候如果能预先知道Map中元素的大小，预设其大小能够提升其性能。 resize代码：
+
+
+```
+//HashMap数组扩容
+
+void resize(int newCapacity) {
+
+Entry[] oldTable = table;
+
+int oldCapacity = oldTable.length;
+
+//如果当前的数组长度已经达到最大值，则不在进行调整
+
+if (oldCapacity == MAXIMUM_CAPACITY) {
+
+threshold = Integer.MAX_VALUE;
+
+return;
+
+}
+
+//根据传入参数的长度定义新的数组
+
+Entry[] newTable = new Entry[newCapacity];
+
+//按照新的规则，将旧数组中的元素转移到新数组中
+
+transfer(newTable);
+
+table = newTable;
+
+//更新临界值
+
+threshold = (int)(newCapacity * loadFactor);
+
+}
+
+//旧数组中元素往新数组中迁移
+
+void transfer(Entry[] newTable) {
+
+//旧数组
+
+Entry[] src = table;
+
+//新数组长度
+
+int newCapacity = newTable.length;
+
+//遍历旧数组
+
+for (int j = 0; j < src.length; j++) {
+
+Entry e = src[j];
+
+if (e != null) {
+
+src[j] = null;
+
+do {
+
+Entry next = e.next;
+
+int i = indexFor(e.hash, newCapacity);//放在新数组中的index位置
+
+e.next = newTable[i];//实现链表结构，新加入的放在链头，之前的的数据放在链尾
+
+newTable[i] = e;
+
+e = next;
+
+} while (e != null);
+
+}
+
+}
+
+}
+
+```
+
 
 这是1.7中的代码，1.8中引入了红黑树的概念，代码会相对复杂一些。
 
