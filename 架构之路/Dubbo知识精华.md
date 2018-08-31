@@ -10,6 +10,8 @@
 
 推荐使用zookeeper注册中心，还有redis等不推荐。
 
+![输入图片说明](https://images.gitee.com/uploads/images/2018/0831/153501_9a059fcf_87650.png "SPI.png")
+
 ####  4、默认使用什么序列化框架，你知道的还有哪些？
 
 默认使用Hessian序列化，还有Duddo、FastJson、Java自带序列化。
@@ -70,3 +72,13 @@ dubbox是当当网基于dubbo上做了一些扩展，如加了服务可restful�
 ####  13、你还了解别的分布式框架吗？
 
 别的还有spring的spring cloud，facebook的thrift，twitter的finagle等。
+
+#### 14、dubbo中zookeeper做注册中心，如果注册中心集群都挂掉，那发布者和订阅者还能通信吗?
+
+可以的，zookeeper的信息会缓存到本地作为一个缓存文件，并且转换成properties对象方便使用。
+
+```
+<!-- 使用zookeeper注册中心暴露服务地址 subscribe 默认：true 是否向此注册中心订阅服务，如果设为false，将只注册，不订阅 check 默认：true 注册中心不存在时，是否报错    -->
+<dubbo:registry protocol="zookeeper" address="${dubbo.registry.address}" file="${dubbo.registry.file}" check="false"/>
+```
+
