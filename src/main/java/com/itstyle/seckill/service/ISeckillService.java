@@ -76,5 +76,13 @@ public interface ISeckillService {
 	 * @return
 	 */
 	Result startSeckilDBOCC(long seckillId,long userId,long number);
+	
+	/**
+	 * 秒杀 四、事物模板
+	 * @param seckillId
+	 * @param userId
+	 * @return
+	 */
+	Result startSeckilTemplate(long seckillId,long userId,long number);
     
 }

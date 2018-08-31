@@ -89,7 +89,7 @@ public class SeckillServiceImpl implements ISeckillService {
 			//这里、不清楚为啥、总是会被超卖101、难道锁不起作用、lock是同一个对象
 			//来自热心网友 zoain 的细心测试思考、然后自己总结了一下
 			//事物未提交之前，锁已经释放(事物提交是在整个方法执行完)，导致另一个事物读取到了这个事物未提交的数据，也就是传说中的脏读。建议锁上移
-			//给自己留个坑思考：为什么分布式锁(zk和redis)没有问题？难道不是事物的锅
+			//给自己留个坑思考：为什么分布式锁(zk和redis)没有问题？(事实是有问题的，由于redis释放锁需要远程通信，不那么明显而已)
 			String nativeSql = "SELECT number FROM seckill WHERE seckill_id=?";
 			Object object =  dynamicQuery.nativeQueryObject(nativeSql, new Object[]{seckillId});
 			Long number =  ((Number) object).longValue();
@@ -134,6 +134,7 @@ public class SeckillServiceImpl implements ISeckillService {
 		}
 		return Result.ok(SeckillStatEnum.SUCCESS);
 	}
+	//注意这里 限流注解 可能会出现少买 自行调整
 	@Override
 	@ServiceLimit
 	@Transactional
