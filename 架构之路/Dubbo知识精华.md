@@ -80,5 +80,10 @@ dubbox是当当网基于dubbo上做了一些扩展，如加了服务可restful�
 ```
 <!-- 使用zookeeper注册中心暴露服务地址 subscribe 默认：true 是否向此注册中心订阅服务，如果设为false，将只注册，不订阅 check 默认：true 注册中心不存在时，是否报错    -->
 <dubbo:registry protocol="zookeeper" address="${dubbo.registry.address}" file="${dubbo.registry.file}" check="false"/>
+
 ```
 
+```
+dubbo.registry.address=172.16.1.130:2181,172.16.1.133:2181,172.16.1.120:2181
+dubbo.registry.file=/root/.dubbo/pay/dubbo.cache
+```
