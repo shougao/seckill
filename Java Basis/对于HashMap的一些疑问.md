@@ -134,6 +134,23 @@ jdk1.8在对hash冲突的key时，如果此bucket位置上的元素数量在10�
 6.哈希值的使用不同，HashTable直接使用对象的hashCode，而HashMap重新计算hash值，用与代替求
 7.ConcurrentHashMap也是一种线程安全的集合类，他和HashTable也是有区别的，主要区别就是加锁的粒度以及如何加锁，ConcurrentHashMap的加锁粒度要比HashTable更细一点。将数据分成一段一段的存储，然后给每一段数据配一把锁，当一个线程占用锁访问其中一个段数据的时候，其他段的数据也能被其他线程访问。
 
+#### 八、HashMap 多线程操作导致死循环问题
+
+在多线程下，进行 put 操作会导致 HashMap 死循环，原因在于 HashMap 的扩容 resize()方法。由于扩容是新建一个数组，复制原数据到数组。由于数组下标挂有链表，所以需要复制链表，但是多线程操作有可能导致环形链表。复制链表过程如下:
+以下模拟2个线程同时扩容。假设，当前 HashMap 的空间为2（临界值为1），hashcode 分别为 0 和 1，在散列地址 0 处有元素 A 和 B，这时候要添加元素 C，C 经过 hash 运算，得到散列地址为 1，这时候由于超过了临界值，空间不够，需要调用 resize 方法进行扩容，那么在多线程条件下，会出现条件竞争，模拟过程如下：
+
+线程一：读取到当前的 HashMap 情况，在准备扩容时，线程二介入
+
+![输入图片说明](https://images.gitee.com/uploads/images/2018/0902/124903_58cfe293_87650.jpeg "11.jpg")
+
+线程二：读取 HashMap，进行扩容
+![输入图片说明](https://images.gitee.com/uploads/images/2018/0902/124909_0bb789e7_87650.jpeg "22.jpg")
+
+线程一：继续执行
+
+![输入图片说明](https://images.gitee.com/uploads/images/2018/0902/124915_5a89ac2e_87650.jpeg "33.jpg")
+
+这个过程为，先将 A 复制到新的 hash 表中，然后接着复制 B 到链头（A 的前边：B.next=A），本来 B.next=null，到此也就结束了（跟线程二一样的过程），但是，由于线程二扩容的原因，将 B.next=A，所以，这里继续复制A，让 A.next=B，由此，环形链表出现：B.next=A; A.next=B
 
 ### 推荐阅读：
 
