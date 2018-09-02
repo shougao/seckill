@@ -165,6 +165,7 @@ Hashtable(同一把锁) :使用 synchronized 来保证线程安全，效率非�
 ![输入图片说明](https://images.gitee.com/uploads/images/2018/0902/124903_58cfe293_87650.jpeg "11.jpg")
 
 线程二：读取 HashMap，进行扩容
+
 ![输入图片说明](https://images.gitee.com/uploads/images/2018/0902/124909_0bb789e7_87650.jpeg "22.jpg")
 
 线程一：继续执行
