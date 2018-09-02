@@ -133,3 +133,12 @@ jdk1.8在对hash冲突的key时，如果此bucket位置上的元素数量在10�
 5.HashTable中hash数组默认大小是11，增加的方式是 old*2+1。HashMap中hash数组的默认大小是16，而且一定是2的指数。
 6.哈希值的使用不同，HashTable直接使用对象的hashCode，而HashMap重新计算hash值，用与代替求
 7.ConcurrentHashMap也是一种线程安全的集合类，他和HashTable也是有区别的，主要区别就是加锁的粒度以及如何加锁，ConcurrentHashMap的加锁粒度要比HashTable更细一点。将数据分成一段一段的存储，然后给每一段数据配一把锁，当一个线程占用锁访问其中一个段数据的时候，其他段的数据也能被其他线程访问。
+
+
+### 推荐阅读：
+
+- [jdk1.8中ConcurrentHashMap的实现原理](https://blog.csdn.net/fjse51/article/details/55260493)
+- [HashMap? ConcurrentHashMap? 相信看完这篇没人能难住你！](https://crossoverjie.top/2018/07/23/java-senior/ConcurrentHashMap/) 
+- [HASHMAP、HASHTABLE、CONCURRENTHASHMAP的原理与区别](http://www.yuanrengu.com/index.php/2017-01-17.html)
+- [ConcurrentHashMap实现原理及源码分析](https://www.cnblogs.com/chengxiao/p/6842045.html)
+- [java-并发-ConcurrentHashMap高并发机制-jdk1.8](https://blog.csdn.net/jianghuxiaojin/article/details/52006118#commentBox)
