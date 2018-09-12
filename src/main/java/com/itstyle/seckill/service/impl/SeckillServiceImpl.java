@@ -204,4 +204,9 @@ public class SeckillServiceImpl implements ISeckillService {
 		}
 	}
 
+	@Override
+	public Result startSeckilTemplate(long seckillId, long userId, long number) {
+		return null;
+	}
+
 }
