@@ -69,3 +69,7 @@ select * from users where YEAR(adddate)
 ```
 #### 不使用NOT IN和操作
 NOT IN和操作都不会使用索引将进行全表扫描。NOT IN可以NOT EXISTS代替，id3则可使用id>3 or id
+
+## 参考阅读
+
+[MySQL索引背后的数据结构及算法原理](http://blog.codinglabs.org/articles/theory-of-mysql-index.html)
