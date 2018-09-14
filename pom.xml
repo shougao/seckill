@@ -116,6 +116,11 @@
 		    <artifactId>commons-codec</artifactId>
 		    <version>1.11</version><!--$NO-MVN-MAN-VER$-->
 		</dependency>
+		<!-- activemq -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-activemq</artifactId>
+		</dependency>
   </dependencies>
   <build>
         <finalName>spring-boot-seckill</finalName><plugins>
