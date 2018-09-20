@@ -21,12 +21,13 @@ DROP TABLE  add_student,add_teacher
 
 ```
 show full processlist 
-
 ```
 
 看一下所有连接进程，注意查看进程等待时间以及所处状态 是否locked
 
 如果进程过多，就把进程打印下来，然后查看
 
+```
 mysql -e 'show full processlist;' > list.txt
+```
 
