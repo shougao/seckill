@@ -16,3 +16,11 @@ SELECT GROUP_CONCAT(table_name) FROM information_schema.tables WHERE table_schem
 # 拷贝出来
 DROP TABLE  add_student,add_teacher
 ```
+
+#### 3）查看当前连接数
+
+```
+show full processlist 
+
+```
+
