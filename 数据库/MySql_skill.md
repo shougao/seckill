@@ -31,3 +31,13 @@ show full processlist
 mysql -e 'show full processlist;' > list.txt
 ```
 
+#### 4）创建一个只读权限的用户
+
+```
+# 创建查询用户、允许外网访问
+CREATE USER 'select'@'%' IDENTIFIED BY '123456';
+# 给新用户赋予查询权限
+GRANT SELECT ON * . * TO 'select'@'%';
+# 刷新权限
+FLUSH PRIVILEGES;
+```
