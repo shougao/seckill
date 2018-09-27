@@ -28,7 +28,7 @@ http://localhost:8080/seckill/swagger-ui.html
 
 ![秒杀商品列表](https://images.gitee.com/uploads/images/2018/0812/153301_3a86c8f4_87650.png "P1V_MX5VC67{PTQOXFLMTXE.png")
 
-![商品详情页](https://images.gitee.com/uploads/images/2018/0812/153441_94ad4819_87650.png "E6KBG9_(X859`XOOFV_LJ2P.png")
+![商品详情页](https://images.gitee.com/uploads/images/2018/0927/175924_a52d66a5_87650.png "1.png")
 
 ![秒杀验证码](https://images.gitee.com/uploads/images/2018/0927/175801_b6262c1c_87650.png "2.png")
 
