@@ -30,6 +30,8 @@ http://localhost:8080/seckill/swagger-ui.html
 
 ![商品详情页](https://images.gitee.com/uploads/images/2018/0812/153441_94ad4819_87650.png "E6KBG9_(X859`XOOFV_LJ2P.png")
 
+![秒杀验证码](https://images.gitee.com/uploads/images/2018/0927/175801_b6262c1c_87650.png "2.png")
+
 ## 友情提示
 
 由于工作原因，项目正在完善中（仅供参考），随时更新日志，有疑问请留言或者加群
