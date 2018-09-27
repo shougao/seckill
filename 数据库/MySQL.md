@@ -10,7 +10,7 @@
 
 -  在创建表的时候如果在业务中能保证非null的字段，建议明确标示not null 因为mysql中对null需要特殊的标示。使用not null 字段更节省空间。对接下来的索引构建也有好处。
 
--  count(*) 和count(id) id 代表某个字段。在mysql中count(*)会把null统计进去、而count(id) 不会。如果统计的字段中含有null，这个两个统计的结果是不同的。
+-  count(*) 和count(name) name 代表某个字段，可以为NULL。在mysql中count(*)会把null统计进去、而count(name) 不会。如果统计的字段中含有null，这个两个统计的结果是不同的。
 
 -  在sql语句等号左边用函数，会使该查询在该字段无法使用索引。如LENGTH(str) 函数。
 
