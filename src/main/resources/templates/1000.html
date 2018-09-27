@@ -6,6 +6,7 @@
 <link th:href="@{/goods/style/shopdetail.css}" rel="stylesheet" type="text/css">
 <script th:src="@{/goods/js/jquery-1.9.1.min.js}"></script>
 <script th:src="@{/goods/js/common.js}"></script>
+<script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
 <script type="text/javascript">
   $(document).ready(function(){
 	  var showproduct = {
@@ -33,7 +34,7 @@
 			var panel=$this.attr("href");
 			$(panel).show();				
 			return fasle;  //告诉浏览器  不要纸箱这个链接
-			})//end click
+		})//end click
 			$(".tabs li:first a").click()   //web 浏览器，单击第一个标签吧
 		})//end ready
 		
@@ -41,7 +42,22 @@
 			$("li").removeClass("now");
 			$(this).addClass("now")
 		});
-});
+    });
+	window.callback = function(res){
+	      if(res.ret === 0){
+	    	  startSeckill(res)
+	      }
+	}
+	function startSeckill(res){
+	  	$.ajax({
+	  		url : "seckillPage/startSeckill",
+	  		type : 'post',
+	  		data : {'ticket' : res.ticket,'randstr':res.randstr},
+	  		success : function(result) {
+	  			alert(result.code)
+	  		}
+	  	});
+	}
 </script>
 </head>
 <body>
@@ -121,7 +137,7 @@ A.info:hover    {color:green;background:transparent;text-decoration:underline}
         </ul>
         <div class="clear"></div>
         <p class="chima">尺码：</p>
-        <p class="buy"><a href="#" id="firstbuy">立即购买</a><a href="#">加入购物车</a></p>
+        <p class="buy"><a href="#" id="TencentCaptcha" data-appid="2042633230" data-cbfn="callback">立即购买</a><a href="#">加入购物车</a></p>
    		<div class="clear"></div>
         <div class="fenx"><a href="#"><img src="goods/images/shopdetail/tell07.png"></a></div>
         <p class="fuwu">服务承诺：</p>
