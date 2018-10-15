@@ -28,7 +28,9 @@ http://localhost:8080/seckill/swagger-ui.html
 
 ![秒杀商品列表](https://images.gitee.com/uploads/images/2018/0812/153301_3a86c8f4_87650.png "P1V_MX5VC67{PTQOXFLMTXE.png")
 
-![商品详情页](https://images.gitee.com/uploads/images/2018/0812/153441_94ad4819_87650.png "E6KBG9_(X859`XOOFV_LJ2P.png")
+![商品详情页](https://images.gitee.com/uploads/images/2018/0927/175924_a52d66a5_87650.png "1.png")
+
+![秒杀验证码](https://images.gitee.com/uploads/images/2018/0927/175801_b6262c1c_87650.png "2.png")
 
 ## 友情提示
 
@@ -321,6 +323,8 @@ SpringBoot开发案例从0到1构建分布式秒杀系统，项目案例基本�
 [从构建分布式秒杀系统聊聊WebSocket推送通知](https://blog.52itstyle.com/archives/2977/ "从构建分布式秒杀系统聊聊WebSocket推送通知")
 
 [从构建分布式秒杀系统聊聊分布式锁](https://blog.52itstyle.com/archives/3202/ "从构建分布式秒杀系统聊聊分布式锁")
+
+[从构建分布式秒杀系统聊聊重复下单](https://blog.52itstyle.com/archives/3391/ "从构建分布式秒杀系统聊聊重复下单")
 
 
 [Nginx学习之负载均衡](https://blog.52itstyle.com/archives/623/ "Nginx学习之负载均衡")
