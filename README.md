@@ -326,6 +326,8 @@ SpringBoot开发案例从0到1构建分布式秒杀系统，项目案例基本�
 
 [从构建分布式秒杀系统聊聊重复下单](https://blog.52itstyle.com/archives/3391/ "从构建分布式秒杀系统聊聊重复下单")
 
+[从构建分布式秒杀系统聊聊验证码](https://blog.52itstyle.com/archives/3367/ "从构建分布式秒杀系统聊聊验证码")
+
 
 [Nginx学习之负载均衡](https://blog.52itstyle.com/archives/623/ "Nginx学习之负载均衡")
 
@@ -346,4 +348,6 @@ SpringBoot开发案例从0到1构建分布式秒杀系统，项目案例基本�
 一个有温度的微信公众号，期待与你共同进步，分享美文，分享各种Java学习资源
 
 ![输入图片说明](https://images.gitee.com/uploads/images/2018/0809/181043_76e4d5b8_87650.png "1234.png")
+
+
 
