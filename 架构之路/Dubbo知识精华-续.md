@@ -205,6 +205,11 @@ Dubbo 会在 Spring 实例化完 bean 之后，在刷新容器最后一步发布
 
 Dubbox 是继 Dubbo 停止维护后，当当网基于 Dubbo 做的一个扩展项目，如加了服务可 Restful 调用，更新了开源组件等。
 
+Dubbo 2.6.1 是改变结构后首次发布的版本，Dubbo 2.6.0 已合并当当网提供的 Dubbox 分支。
+
+Dubbo的版本策略：两个大版本并行发展，2.5.x是稳定版本，2.6.x是新功能实验版本。2.6上实验都稳定了以后，会迁移到2.5。
+
+
 #### 36、你还了解别的分布式框架吗？
 
 别的还有 Spring cloud、Facebook 的 Thrift、Twitter 的 Finagle 等。
