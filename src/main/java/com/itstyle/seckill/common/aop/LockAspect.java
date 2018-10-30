@@ -44,6 +44,7 @@ public class LockAspect {
 			obj = joinPoint.proceed();
 		} catch (Throwable e) {
 			e.printStackTrace();
+			throw new RuntimeException();       
 		} finally{
 			lock.unlock();
 		}
